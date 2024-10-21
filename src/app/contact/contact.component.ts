@@ -79,35 +79,36 @@ export class ContactComponent {
   ngOnInit() {
     this.fields.forEach((field) => {
       const controlValidators = [];
-    
+
       if (field.validators) {
         // Required Validator
         if (field.validators.required?.isRequired) {
           controlValidators.push(Validators.required);
         }
-        
+
         // Pattern Validator
         if (field.validators.pattern) {
           controlValidators.push(
             Validators.pattern(new RegExp(field.validators.pattern.pattern))
           );
         }
-        
+
         // Custom Validator
         if (field.validators.custom) {
           controlValidators.push(field.validators.custom.validator);
         }
       }
-    
+
       this.form.addControl(
         field.controlName,
         new FormControl('', controlValidators)
       );
-
     });
   }
 
   submitForm() {
-    console.log(this.form.value);
+    if (this.form.valid) {
+      console.log(this.form.value);
+    }
   }
 }

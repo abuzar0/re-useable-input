@@ -2,6 +2,7 @@
   [type]="buttonInfo?.type ?? 'button'"
   [class]="buttonInfo?.class"
   (click)="buttonInfo?.click()"
+  [disabled]="disable"
 >
   {{ buttonInfo?.label }}
 </button>

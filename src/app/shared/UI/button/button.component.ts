@@ -10,6 +10,5 @@ import { ButtonType } from '../../interface/button-type';
 })
 export class ButtonComponent {
   @Input() buttonInfo: Partial<ButtonType> | undefined;
-
-
+  @Input() disable:boolean=false;
 }
