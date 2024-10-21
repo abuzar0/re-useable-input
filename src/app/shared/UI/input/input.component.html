@@ -1,0 +1,27 @@
+<input
+  [type]="inputDetails.type"
+  class="form-control"
+  [id]="inputDetails.id"
+  [placeholder]="inputDetails.placeholder"
+  [formControlName]="inputDetails.controlName"
+/>
+
+<ng-container *ngIf="form.get(inputDetails.controlName) as control">
+  <div *ngIf="control.errors && control.touched">
+    <div *ngIf="control.errors['required']">
+      <small class="text-danger">{{
+        getErrorMessage(inputDetails.controlName)
+      }}</small>
+    </div>
+    <div *ngIf="control.errors['pattern']">
+      <small class="text-danger">{{
+        getErrorMessage(inputDetails.controlName)
+      }}</small>
+    </div>
+    <div *ngIf="control.errors['custom']">
+      <small class="text-danger">{{
+        getErrorMessage(inputDetails.controlName)
+      }}</small>
+    </div>
+  </div>
+</ng-container>

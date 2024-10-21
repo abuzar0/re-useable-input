@@ -1,0 +1,7 @@
+<button
+  [type]="buttonInfo?.type ?? 'button'"
+  [class]="buttonInfo?.class"
+  (click)="buttonInfo?.click()"
+>
+  {{ buttonInfo?.label }}
+</button>
