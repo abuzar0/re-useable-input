@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
     {
       provide: ControlContainer,
       useFactory: () => inject(ControlContainer, 4),
+      // SkipSelf = 4,
     },
   ],
   imports: [ReactiveFormsModule, FormsModule, CommonModule],
@@ -28,7 +29,7 @@ export class InputComponent {
 
   constructor(private control: ControlContainer) {
     this.form = this.control?.control as FormGroup;
-    console.log(this.form);
+    // console.log(this.form);
   }
 
 
