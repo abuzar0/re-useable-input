@@ -31,23 +31,6 @@ export class InputComponent {
     console.log(this.form);
   }
 
-  // getErrorMessage(controlName: string): any {
-  //   const control = this.form.get(controlName);
-  //   console.log(control)
-  //   if (control && control.errors) {
-  //     for (const errorKey of Object.keys(control.errors) as Array<keyof InputType['validators']>) {
-  //       const validator = this.inputDetails.validators?.[errorKey] as any;
-        
-  //       console.log(errorKey)
-  //       // Ensure validator is defined before accessing its properties
-  //       if (validator) {
-  //         return validator.message; // Return the custom message
-  //       }
-  //     }
-  //   }
-    
-  //   return '';
-  // }
 
   getErrorMessage(controlName: string): string {
     const control = this.form.get(controlName);
