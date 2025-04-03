@@ -65,6 +65,7 @@ export class ContactComponent {
       placeholder: 'enter message',
       controlName: 'message',
       validators: {
+        required: { isRequired: true, message: 'message required' },
         custom: {
           validator: CustomValidators.messageLength,
           message: 'message must be 10 length',
